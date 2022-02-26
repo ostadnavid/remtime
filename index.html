@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>landing page</title>
+      <meta charset="UTF-8">
+      <meta name="author" content="Navid Poladi">
+      <meta name="theme-color" content="rgb(119, 136, 153)">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+   </head>
+   <style>
+      html {
+         background-image: linear-gradient(90deg,rgb(119, 136, 153),rgb(128, 170, 212));
+         font-family: arial,verdana,sans-serif;
+         color:white;
+         box-sizing: border-box;
+      }
+      .card-dhi {
+         position: relative;
+         width:25%;
+         height: 35vh;
+         background-image:linear-gradient(-50deg,rgb(128, 170, 212),rgb(119, 136, 153),rgb(119, 136, 153));
+         border-radius: 1vh;
+         transition: .5s ease;
+         z-index: 2;
+         float:left;
+         margin:0 2px 0 2px;
+      }
+      .card-dhi:hover {
+         transform:scale(1.1,1.1);
+         z-index: 99;
+      }
+       .text{
+         position: absolute;
+         right:2px;
+         bottom:2px;
+         font-size: 9em;
+         opacity: 0.7;
+      }
+      .output-bg {
+         position: absolute;
+         bottom:-50px;
+         left:0;
+         width:100%;
+         height:auto;
+         background-image:linear-gradient(-170deg,rgb(128, 170, 212),rgb(119, 136, 153),rgb(119, 136, 153));
+         transform: translate(0,-100%);
+         transition: .7s ease-out;
+         z-index: 1;
+         opacity: 0;
+      }
+      .card-dhi:hover .output-bg  {
+         opacity: 1;
+         transform: translate(0,0);
+      }
+      .output {
+         text-align: center;
+         padding:14px 20px;
+         font-size: 1.5em;
+      }
+      @media screen and (max-width:1300px)
+      {
+         .card-dhi {
+            width:50%;
+            margin:0 0 0 0;
+            font-size: 1.3em;
+         }
+      }
+      @media screen and (max-width:850px)
+      {
+         .card-dhi {
+            width:100%;
+            font-size: 1em;
+            height:40vh;
+         }
+         .output-bg {
+         position: absolute;
+         bottom:200px;
+         left:0;
+         width:100%;
+         height:auto;
+         background-image:linear-gradient(-20deg,rgb(128, 170, 212),rgb(119, 136, 153),rgb(119, 136, 153),rgb(119, 136, 153));
+         transform: translate(0,-100%);
+         transition: .7s ease-out;
+         z-index: 1;
+         opacity: 0;
+      }
+      }
+   </style>
+   <body>
+      <div class="card-dhi">
+         <div class="text">2023</div>
+         <div class="output-bg">
+            <div class="output">output<small>(Gregorian date)</small></div>
+         </div>
+      </div>
+      <div class="card-dhi">
+         <div class="text">1401</div>
+         <div class="output-bg">
+            <div class="output">output<small>(Solar date)</small></div>
+         </div>
+      </div>
+   </body>
+</html>
