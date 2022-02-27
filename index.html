@@ -15,91 +15,276 @@
          font-family: arial,verdana,sans-serif;
          color:white;
          box-sizing: border-box;
+         overflow-x: hidden;
       }
+      * {margin:0;padding:0;}
+
+
+      /*cards*/
       .card-dhi {
          position: relative;
-         width:25%;
-         height: 35vh;
-         background-image:linear-gradient(-50deg,rgb(128, 170, 212),rgb(119, 136, 153),rgb(119, 136, 153));
-         border-radius: 1vh;
-         transition: .5s ease;
-         z-index: 2;
+         background-color: rgba(0, 0, 0, 0.699);
+         width:23%;
+         height:50vh;
          float:left;
-         margin:0 2px 0 2px;
+         margin-right: 1%;
+         margin-left:1%;
+         box-shadow: 0px 0px 30px -3px #000000;
+         transition:.5s ease;
+         border-radius: 5px;
       }
-      .card-dhi:hover {
-         transform:scale(1.1,1.1);
+      .card-hi-cod-m {
+         position: relative;
+         background-color: rgba(0, 0, 0, 0.699);
+         width:23%;
+         height:50vh;
+         float:left;
+         margin-right: 1%;
+         margin-left:1%;
+         box-shadow: 0px 0px 30px -3px #000000;
+         transition:.5s ease;
+         border-radius: 5px;
+         background:url('media/thumb-350-1123054.jpg') no-repeat center center fixed;
+         background-size:cover;
+      }
+      .card-dhi:hover,.card-hi-cod-m:hover {
+         transform:scale(1.2,1.2) translate(0,30px);
          z-index: 99;
+         box-shadow: none;
       }
-       .text{
-         position: absolute;
-         right:2px;
-         bottom:2px;
-         font-size: 9em;
-         opacity: 0.7;
+      @media screen and (max-width:1100px) {
+         .card-dhi,.card-hi-cod-m {
+            width:31.33%;
+         }
       }
-      .output-bg {
-         position: absolute;
-         bottom:-50px;
+      @media screen and (max-width:800px) {
+         .card-dhi,.card-hi-cod-m {
+            width:48%;
+         }
+         .card-dhi {
+            margin-bottom:2%;
+
+         }
+         .card-dhi:hover {
+            transform:scale(1.1,1.1) translate(0,30px);
+         }
+         .card-hi-cod-m:hover {
+            transform:scale(1.1,1.1) translate(0,-30px);
+         }
+      }
+      @media screen and (max-width:600px) {
+         .card-dhi,.card-hi-cod-m {
+            width:85%;
+            margin-left:auto;
+            margin-right:auto;
+            float:none;
+         }
+         #middle:hover {
+            transform:scale(1.1,1.1);
+         }
+      }
+       /*cards*/
+
+
+       /*text*/
+      .card-dhi .text {
+         position:absolute;
+         right:0;
+         bottom:0;
+         font-size:3em;
+         word-break: break-all;
+      }
+      .card-hi-cod-m .text {
+         position:absolute;
+         right:0;
+         bottom:0;
+         font-size:3em;
+         word-break: break-all;
+      }
+      /*text*/
+      /*output background*/
+      .card-dhi .output-bg {
+         position:absolute;
+         top:5%;
          left:0;
          width:100%;
+         background-color: transparent;
          height:auto;
-         background-image:linear-gradient(-170deg,rgb(128, 170, 212),rgb(119, 136, 153),rgb(119, 136, 153));
-         transform: translate(0,-100%);
-         transition: .7s ease-out;
-         z-index: 1;
-         opacity: 0;
       }
-      .card-dhi:hover .output-bg  {
-         opacity: 1;
-         transform: translate(0,0);
+      .card-hi-cod-m .output-bg {
+         position:absolute;
+         top:5%;
+         left:0;
+         width:100%;
+         background-color: rgba(0, 0, 0, 0.377);
+         height:auto;
       }
-      .output {
+       /*output background*/
+       /*output*/
+      .card-dhi .output-bg .output {
          text-align: center;
-         padding:14px 20px;
-         font-size: 1.5em;
+         padding:10px;
+         font-size:1.5em;
       }
-      @media screen and (max-width:1300px)
-      {
-         .card-dhi {
-            width:50%;
-            margin:0 0 0 0;
-            font-size: 1.3em;
-         }
+      .card-hi-cod-m .output-bg .output {
+         text-align: center;
+         padding:10px;
+         font-size:1.5em;
       }
-      @media screen and (max-width:850px)
-      {
-         .card-dhi {
-            width:100%;
-            font-size: 1em;
-            height:40vh;
-         }
-         .output-bg {
-         position: absolute;
-         bottom:200px;
-         left:0;
-         width:100%;
-         height:auto;
-         background-image:linear-gradient(-20deg,rgb(128, 170, 212),rgb(119, 136, 153),rgb(119, 136, 153),rgb(119, 136, 153));
-         transform: translate(0,-100%);
-         transition: .7s ease-out;
-         z-index: 1;
-         opacity: 0;
+      /*output*/
+      /*col-60*/
+      .card-dhi .output-bg .output .col-60 {
+         width:60%;
+         float:left;
+         font-family: 'Courier New', Courier, monospace;
       }
+      .card-hi-cod-m .output-bg .output .col-60 {
+         width:60%;
+         float:left;
+         font-family: 'Courier New', Courier, monospace;
+      }
+       /*col-60*/
+        /*small*/
+      .card-dhi .output-bg .output small {
+         width:40%;
+         float:left;
+      }
+      .card-hi-cod-m .output-bg .output small {
+         width:40%;
+         float:left;
+      }
+      /*small*/
+      /*more-data*/
+      .more-data {
+         position:absolute;
+         top:50%;
+         left:50%;
+         transform: translate(-50%,-50%);
+         font-size:1.25em;
+      }
+      .data {
+         display: inline-block;
+         font-family: 'Courier New', Courier, monospace;
       }
    </style>
    <body>
       <div class="card-dhi">
-         <div class="text">2023</div>
+         <div class="text">Gregorian date</div>
          <div class="output-bg">
-            <div class="output">output<small>(Gregorian date)</small></div>
+            <div class="output"><div id="date1" class="col-60"> Loading...</div><small>2023</small></div>
+         </div>
+         <div class="more-data">
+            <div id="data01" class="data"></div> 
          </div>
       </div>
-      <div class="card-dhi">
-         <div class="text">1401</div>
+      <div id="middle" class="card-dhi">
+         <div class="text">Solar date</div>
          <div class="output-bg">
-            <div class="output">output<small>(Solar date)</small></div>
+            <div class="output"> <div id="date2" class="col-60"> Loading...</div><small>1401</small></div>
+         </div>
+         <div class="more-data">
+            <div id="data02" class="data"></div> 
          </div>
       </div>
+      <div class="card-hi-cod-m">
+         <div class="text">call of duty mobile</div>
+         <div class="output-bg">
+            <div class="output"> <div id="date3" class="col-60"> Loading...</div><small>2022-Season2:Task Force 141 </small></div>
+         </div>
+      </div>
+      <script>
+         // Set the date we're counting down to
+         var countDownDate = new Date("Jan 1, 2023 0:0:0").getTime();
+
+         // Update the count down every 1 second
+         var x = setInterval(function() {
+
+        // Get today's date and time
+         var now = new Date().getTime();
+
+         // Find the distance between now and the count down date
+         var distance = countDownDate - now;
+
+         // Time calculations for days, hours, minutes and seconds
+         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+         // Display the result in the element with id="demo"
+         document.getElementById("date1").innerHTML = days + "d " + hours + "h "
+         + minutes + "m " + seconds + "s ";
+
+         // If the count down is finished, write some text
+         if (distance < 0) {
+         clearInterval(x);
+         document.getElementById("date1").innerHTML = "EXPIRED";
+      }
+   }, 1000);
+
+
+   // Set the date we're counting down to
+   var countDownDate02 = new Date("march 21, 2022 0:0:0").getTime();
+
+// Update the count down every 1 second
+var x02 = setInterval(function() {
+
+// Get today's date and time
+var now02 = new Date().getTime();
+
+// Find the distance between now and the count down date
+var distance02 = countDownDate02 - now02;
+
+// Time calculations for days, hours, minutes and seconds
+var days02 = Math.floor(distance02 / (1000 * 60 * 60 * 24));
+var hours02 = Math.floor((distance02 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes02 = Math.floor((distance02 % (1000 * 60 * 60)) / (1000 * 60));
+var seconds02 = Math.floor((distance02 % (1000 * 60)) / 1000);
+
+// Display the result in the element with id="demo"
+document.getElementById("date2").innerHTML = days02 + "d " + hours02 + "h "
++ minutes02 + "m " + seconds02 + "s ";
+
+// If the count down is finished, write some text
+if (distance02 < 0) {
+clearInterval(x02);
+document.getElementById("date2").innerHTML = "EXPIRED";
+}
+}, 1000);
+
+
+
+
+ // Set the date we're counting down to
+ var countDownDate03 = new Date("mar 31, 2022 0:0:0").getTime();
+
+// Update the count down every 1 second
+var x03 = setInterval(function() {
+
+// Get today's date and time
+var now03 = new Date().getTime();
+
+// Find the distance between now and the count down date
+var distance03 = countDownDate03 - now03;
+
+// Time calculations for days, hours, minutes and seconds
+var days03 = Math.floor(distance03 / (1000 * 60 * 60 * 24));
+var hours03 = Math.floor((distance03 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes03 = Math.floor((distance03 % (1000 * 60 * 60)) / (1000 * 60));
+var seconds03 = Math.floor((distance03 % (1000 * 60)) / 1000);
+
+// Display the result in the element with id="demo"
+document.getElementById("date3").innerHTML = days03 + "d " + hours03 + "h "
++ minutes03 + "m " + seconds03 + "s ";
+
+// If the count down is finished, write some text
+if (distance03 < 0) {
+clearInterval(x03);
+document.getElementById("date3").innerHTML = "EXPIRED";
+}
+}, 1000);
+
+
+      </script>
    </body>
 </html>
